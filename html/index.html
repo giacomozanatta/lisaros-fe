@@ -35,8 +35,10 @@
     }
 
     .loader {
-      border: 16px solid #f3f3f3; /* Light grey */
-      border-top: 16px solid #3498db; /* Blue */
+      border: 16px solid #f3f3f3;
+      /* Light grey */
+      border-top: 16px solid #3498db;
+      /* Blue */
       border-radius: 50%;
       width: 120px;
       height: 120px;
@@ -46,12 +48,15 @@
     .bg-lisa {
       background-color: #d9ede0;
     }
+
     body {
       padding-top: 70px;
     }
+
     .sub-menu {
       background-color: #d9ede0;
     }
+
     .nav-pills .nav-link-lisa.active {
       background-color: #199a59;
     }
@@ -59,18 +64,23 @@
     .lisa-color {
       background-color: #199a59;
     }
+
     .nav-link-lisa {
       border-width: 0;
       background-color: transparent;
     }
+
     .navbar {
       height: 70px;
     }
+
     .h-scroll {
-      height: 100%; /* %-height of the viewport */
+      height: 100%;
+      /* %-height of the viewport */
       position: fixed;
       overflow-y: scroll;
     }
+
     #cy {
       width: 100%;
       height: 600px;
@@ -86,10 +96,10 @@
       color: #199a59;
     }
 
-    .overlay{
+    .overlay {
       position: fixed;
-	    width: 100%;
-	    height: 100%;
+      width: 100%;
+      height: 100%;
       background: hsla(135, 79%, 50%, 0.217);
     }
 
@@ -125,59 +135,69 @@
       text-align: center;
       transition: color .2s ease-in-out;
     }
+
     #multiple_files_upload {
       visibility: hidden;
       width: 0px;
       height: 0px;
     }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   </style>
   <title>ROSLiSA | File Uploader</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="icon" href="logo.png">
 </head>
-  
+
 <body style="font-family: 'Raleway', sans-serif;">
   <div class="alert alert-danger danger-lisa-error d-none" role="alert">There was an error during analysis.</div>
   <div class="alert alert-warning warning-file-py d-none" role="alert">We support only .py files.</div>
   <div class="overlay d-none"></div>
   <div class="container">
-  <nav class="navbar bg-lisa fixed-top">
-    <div class="container-fluid justify-content-start">
-        <img src="https://raw.githubusercontent.com/lisa-analyzer/lisa/master/logo.png" alt="" width="4%" class="d-inline-block align-text-top mr-4" />
-      <div class="ml-4"><h4>ROS2 Analyzer</h4></div>
-    </div>
-  </nav>
+    <nav class="navbar bg-lisa fixed-top">
+      <div class="container-fluid justify-content-start">
+        <img src="https://raw.githubusercontent.com/lisa-analyzer/lisa/master/logo.png" alt="" width="4%"
+          class="d-inline-block align-text-top mr-4" />
+        <div class="ml-4">
+          <h4>ROS2 Analyzer</h4>
+        </div>
+      </div>
+    </nav>
 
-  <div class="alert alert-danger danger-file-exists d-none" role="alert">File with this name already exists.</div>
+    <div class="alert alert-danger danger-file-exists d-none" role="alert">File with this name already exists.</div>
 
-  <div class="file-upload">
-    <!--<div class="file-upload__area">
+    <div class="file-upload">
+      <!--<div class="file-upload__area">
       <h3>Add your sources here</h3>
       <form>
         <input type="file" name="" id="multiple_files_upload" accept=".py"multiple />
     </form>
     </div>-->
-    <label for="multiple_files_upload" class="drop-container" id="dropcontainer">
-      <span class="drop-title">Drop files here</span>
-      <input type="file" id="multiple_files_upload" accept=".py" multiple>
-    </label>
+      <label for="multiple_files_upload" class="drop-container" id="dropcontainer">
+        <span class="drop-title">Drop files here</span>
+        <input type="file" id="multiple_files_upload" accept=".py" multiple>
+      </label>
 
-  </div>
+    </div>
 
-  <div class="file-preview-container">
-    <div class="file-preview" id="file-preview">
-  </div>
-  </div>
-  <div class="upload-status text-center d-none">
-    <div class="d-flex justify-content-center">
-      <div class="spinner-border" role="status">
+    <div class="file-preview-container">
+      <div class="file-preview" id="file-preview">
       </div>
     </div>
+    <div class="upload-status text-center d-none">
+      <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+        </div>
+      </div>
     </div>
     <div class="text-center analyze d-none">
       <button type="button" class="text-center btn btn-lisa" id="btn-analyze">RUN</button>
@@ -185,111 +205,121 @@
         <span class="sr-only">Loading...</span>
       </div>
     </div>
+    <div class>
+      <h2>Examples</h2>
+      <ul>
+        <li>
+          <h3>ROS2 Examples</h3>
+          <ul>
+            <li><a href="">minimal_publisher, minimal_subscriber</a></li>
+            </h3>
+        </li>
+      </ul>
+    </div>
+    <script>
 
-  <script>
+      const dropContainer = document.getElementById("dropcontainer");
+      const fileInput = document.getElementById("multiple_files_upload");
 
-    const dropContainer = document.getElementById("dropcontainer");
-    const fileInput = document.getElementById("multiple_files_upload");
+      dropContainer.addEventListener("dragover", (e) => {
+        // prevent default to allow drop
+        e.preventDefault();
+      }, false);
 
-    dropContainer.addEventListener("dragover", (e) => {
-      // prevent default to allow drop
-      e.preventDefault();
-    }, false);
+      dropContainer.addEventListener("dragenter", () => {
+        dropContainer.classList.add("drag-active");
+      })
 
-    dropContainer.addEventListener("dragenter", () => {
-      dropContainer.classList.add("drag-active");
-    })
+      dropContainer.addEventListener("dragleave", () => {
+        dropContainer.classList.remove("drag-active");
+      })
 
-    dropContainer.addEventListener("dragleave", () => {
-      dropContainer.classList.remove("drag-active");
-    })
+      dropContainer.addEventListener("drop", (e) => {
+        e.preventDefault()
+        dropContainer.classList.remove("drag-active");
+        fileInput.files = e.dataTransfer.files;
+        fileInput.dispatchEvent(new Event("change"));
+      })
 
-    dropContainer.addEventListener("drop", (e) => {
-      e.preventDefault()
-      dropContainer.classList.remove("drag-active");
-      fileInput.files = e.dataTransfer.files;
-      fileInput.dispatchEvent(new Event("change"));
-    })
-  
-    //   Upload Single Image
-    let files = {};
-    // Mulitple File Upload
+      //   Upload Single Image
+      let files = {};
+      // Mulitple File Upload
 
-    document
-      .getElementById("multiple_files_upload")
-      .addEventListener("change", async (event) => {
-        let atLeastOneWrongFile = false;
-        try {
-          for (let key in event.target.files) {
-            console.log(event.target.files[key]);
-            document.getElementsByClassName("danger-lisa-error")[0].classList.add("d-none");
-            document.getElementsByClassName("warning-file-py")[0].classList.add("d-none");
-            if (event.target.files[key] instanceof File) {
-              if (event.target.files[key].name.endsWith('.py')) {
-                //console.log(event.target.files[key])
-                if (files[event.target.files[key].name] != null) {
-                  delete files[event.target.files[key].name];
-                  document.getElementById(event.target.files[key].name).parentElement.removeChild(document.getElementById(event.target.files[key].name));
+      document
+        .getElementById("multiple_files_upload")
+        .addEventListener("change", async (event) => {
+          let atLeastOneWrongFile = false;
+          try {
+            for (let key in event.target.files) {
+              console.log(event.target.files[key]);
+              document.getElementsByClassName("danger-lisa-error")[0].classList.add("d-none");
+              document.getElementsByClassName("warning-file-py")[0].classList.add("d-none");
+              if (event.target.files[key] instanceof File) {
+                if (event.target.files[key].name.endsWith('.py')) {
+                  //console.log(event.target.files[key])
+                  if (files[event.target.files[key].name] != null) {
+                    delete files[event.target.files[key].name];
+                    document.getElementById(event.target.files[key].name).parentElement.removeChild(document.getElementById(event.target.files[key].name));
+                  }
+                  const fileDiv = document.createElement("div");
+                  fileDiv.id = event.target.files[key].name;
+                  const fileDivName = document.createElement("span");
+                  fileDivName.classList.add("mr-4");
+                  files[event.target.files[key].name] = event.target.files[key];
+                  const fileDivRemove = document.createElement("button");
+                  fileDivRemove.addEventListener("click", function (ev) {
+                    delete files[this.parentElement.id];
+                    this.parentElement.parentElement.removeChild(this.parentElement);
+                    document.getElementsByClassName("danger-lisa-error")[0].classList.add("d-none");
+                    showOrHideAnalyzeButton();
+                  });
+                  fileDivRemove.classList.add("btn", "btn-outline-danger");
+                  fileDivRemove.textContent = "Remove";
+
+                  fileDivName.textContent = event.target.files[key].name;
+                  fileDiv.appendChild(fileDivName);
+                  fileDiv.appendChild(fileDivRemove)
+                  document.getElementById("file-preview").appendChild(fileDiv);
+
+                  //formData.append("files", event.target.files[key]);
+                } else {
+                  atLeastOneWrongFile = true;
                 }
-                const fileDiv = document.createElement("div");
-                fileDiv.id = event.target.files[key].name;
-                const fileDivName = document.createElement("span");
-                fileDivName.classList.add("mr-4");
-                files[event.target.files[key].name] = event.target.files[key];
-                const fileDivRemove = document.createElement("button");
-                fileDivRemove.addEventListener("click", function(ev) {
-                  delete files[this.parentElement.id];
-                  this.parentElement.parentElement.removeChild(this.parentElement);
-                  document.getElementsByClassName("danger-lisa-error")[0].classList.add("d-none");
-                  showOrHideAnalyzeButton();
-                });
-                fileDivRemove.classList.add("btn", "btn-outline-danger");
-                fileDivRemove.textContent = "Remove";
-
-                fileDivName.textContent = event.target.files[key].name;
-                fileDiv.appendChild(fileDivName);
-                fileDiv.appendChild(fileDivRemove)
-                document.getElementById("file-preview").appendChild(fileDiv);
-
-                //formData.append("files", event.target.files[key]);
-              } else {
-                atLeastOneWrongFile = true;
               }
-          }
-        }
-        if (atLeastOneWrongFile) {
-          document.getElementsByClassName("warning-file-py")[0].classList.remove("d-none");
-        }
-        //document.getElementById("multiple_files_upload").parentElement.reset();
-        showOrHideAnalyzeButton();
-        
-          //console.log(files);
-          /*const data = await fetch(`/analyze`, {
-            body: formData,
-            method: "POST",
-          }).then(res => res.json())
-            .then(json => {
-              console.log(json)
-              window.location.href = json.url;
-            });*/
-        } catch (error) {
-          console.log(error);
-          //alert(error.message);
-        }
-      });
+            }
+            if (atLeastOneWrongFile) {
+              document.getElementsByClassName("warning-file-py")[0].classList.remove("d-none");
+            }
+            //document.getElementById("multiple_files_upload").parentElement.reset();
+            showOrHideAnalyzeButton();
 
-      document.getElementById("btn-analyze").addEventListener("click", function(e) {
+            //console.log(files);
+            /*const data = await fetch(`/analyze`, {
+              body: formData,
+              method: "POST",
+            }).then(res => res.json())
+              .then(json => {
+                console.log(json)
+                window.location.href = json.url;
+              });*/
+          } catch (error) {
+            console.log(error);
+            //alert(error.message);
+          }
+        });
+
+      document.getElementById("btn-analyze").addEventListener("click", function (e) {
         document.getElementsByClassName("danger-lisa-error")[0].classList.add("d-none");
         document.getElementsByClassName("warning-file-py")[0].classList.add("d-none");
         document.getElementsByClassName("overlay")[0].classList.remove("d-none");
         document.getElementsByClassName("lisa-spinner")[0].classList.remove("d-none");
 
-          let formData = new FormData();
-          for (let file in files) {
-            formData.append("files", files[file]);
-          }
-          console.log(formData.getAll("files"));
-          try {
+        let formData = new FormData();
+        for (let file in files) {
+          formData.append("files", files[file]);
+        }
+        console.log(formData.getAll("files"));
+        try {
           const data = fetch(`/analyze`, {
             body: formData,
             method: "POST",
@@ -303,25 +333,25 @@
               } else {
                 document.getElementsByClassName("overlay")[0].classList.add("d-none");
                 document.getElementsByClassName("lisa-spinner")[0].classList.add("d-none");
-              window.location.href = json.url;
-            }
-              });
-      } catch(error) {
-        document.getElementsByClassName("danger-lisa-error")[0].classList.remove("d-none");
-        document.getElementsByClassName("overlay")[0].classList.add("d-none");
-                document.getElementsByClassName("lisa-spinner")[0].classList.add("d-none");
-        console.log(error);
-      }
-    });
-        function showOrHideAnalyzeButton() {
+                window.location.href = json.url;
+              }
+            });
+        } catch (error) {
+          document.getElementsByClassName("danger-lisa-error")[0].classList.remove("d-none");
+          document.getElementsByClassName("overlay")[0].classList.add("d-none");
+          document.getElementsByClassName("lisa-spinner")[0].classList.add("d-none");
+          console.log(error);
+        }
+      });
+      function showOrHideAnalyzeButton() {
         if (Object.keys(files).length) {
           document.getElementsByClassName("analyze")[0].classList.remove("d-none");
         } else {
           document.getElementsByClassName("analyze")[0].classList.add("d-none");
         }
       }
-  </script>
-</div>
+    </script>
+  </div>
 </body>
 
 </html>
