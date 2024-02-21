@@ -96,5 +96,5 @@ func main() {
 			"analysisStatus": string(bytes),
 		})
 	})
-	r.Run(":9888") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run("lisaros-fe.onrender.com:9888") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
